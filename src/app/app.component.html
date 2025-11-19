@@ -1,0 +1,87 @@
+<div class="background-blur"></div>
+
+<header class="site-header" role="banner">
+  <div class="brand">
+    <span class="brand-mark">CR</span>
+    <div>
+      <h1>Canada Restaurant</h1>
+      <p>Global flavors from coast to coast</p>
+    </div>
+  </div>
+
+  <nav aria-label="Primary" role="navigation">
+    <a
+      *ngFor="let link of navLinks"
+      [routerLink]="link.path"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: link.exact }"
+    >
+      {{ link.label }}
+    </a>
+  </nav>
+
+  <button class="pill-btn" type="button" (click)="openReservation()">Reserve Table</button>
+</header>
+
+<main>
+  <router-outlet />
+</main>
+
+<footer class="site-footer">
+  <div>
+    <h4>Canada Restaurant</h4>
+    <p>55 Maple Leaf Ave, Toronto, Canada</p>
+  </div>
+  <div>
+    <span>Open Hours</span>
+    <p>Mon-Sun · 11:00 AM - 11:00 PM</p>
+  </div>
+  <div>
+    <span>Contact</span>
+    <p>+1 (416) 555-0118</p>
+  </div>
+  <div>
+    <span>© {{ currentYear }}</span>
+    <p>All rights reserved</p>
+  </div>
+</footer>
+
+<div
+  class="modal-overlay"
+  [class.show]="reservationState.isOpen()"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="reservationTitle"
+  (click)="closeReservation()"
+>
+  <div class="reservation-modal" (click)="$event.stopPropagation()">
+    <button class="close-btn" aria-label="Close" type="button" (click)="closeReservation()">×</button>
+    <h3 id="reservationTitle">Reserve a Table</h3>
+
+    <form class="reservation-form" [formGroup]="reservationForm" (ngSubmit)="submitReservation()" novalidate>
+      <label>
+        Full Name
+        <input type="text" formControlName="name" required />
+      </label>
+      <label>
+        Email
+        <input type="email" formControlName="email" required />
+      </label>
+      <label>
+        Date
+        <input type="date" formControlName="date" required />
+      </label>
+      <label>
+        Time
+        <input type="time" formControlName="time" required />
+      </label>
+      <label>
+        Guests
+        <input type="number" formControlName="guests" min="1" max="12" required />
+      </label>
+      <button class="pill-btn" type="submit" [disabled]="reservationForm.invalid">Book Now</button>
+      <p class="success" *ngIf="reservationState.success()">Reservation request sent! We will confirm shortly.</p>
+    </form>
+  </div>
+</div>
+

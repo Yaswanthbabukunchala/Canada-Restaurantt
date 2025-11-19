@@ -1,0 +1,55 @@
+<section class="feedback-hero">
+  <div>
+    <p class="eyebrow">Feedback &amp; About</p>
+    <h2>We love hearing from you</h2>
+    <p>Your stories, celebrations, and honest notes help us keep elevating the Canada Restaurant experience.</p>
+  </div>
+</section>
+
+<section class="feedback-grid">
+  <form class="feedback-card" [formGroup]="feedbackForm" (ngSubmit)="submit()" novalidate>
+    <h3>Share your experience</h3>
+    <label>
+      Full Name
+      <input type="text" formControlName="name" required />
+    </label>
+    <label>
+      Email
+      <input type="email" formControlName="email" required />
+    </label>
+    <label>
+      Visit Type
+      <select formControlName="visitType" required>
+        <option value="" disabled>Select visit type</option>
+        <option>Dine-in Lunch</option>
+        <option>Dine-in Dinner</option>
+        <option>Takeout</option>
+        <option>Event Catering</option>
+      </select>
+    </label>
+    <label>
+      Your Message
+      <textarea rows="4" formControlName="message" required></textarea>
+    </label>
+    <button class="pill-btn" type="submit" [disabled]="feedbackForm.invalid">Send Feedback</button>
+    <p class="success" *ngIf="success">Thanks! We’ve received your thoughts.</p>
+  </form>
+
+  <article class="feedback-card about-card">
+    <h3>About Canada Restaurant</h3>
+    <p>
+      Founded in 2010, we blend Canada’s multicultural spirit with modern culinary craftsmanship. Our kitchens celebrate
+      local farms, indigenous ingredients, and global techniques.
+    </p>
+    <ul>
+      <li><strong>Executive Chef:</strong> Chantal Wu</li>
+      <li><strong>Wine Director:</strong> Liam Martin</li>
+      <li><strong>Coffee &amp; Pastry:</strong> Atelier Nordic</li>
+    </ul>
+    <div class="contact-box">
+      <p><strong>Email:</strong> hello&#64;canadaresturent.ca</p>
+      <p><strong>Phone:</strong> +1 (416) 555-0118</p>
+    </div>
+  </article>
+</section>
+
