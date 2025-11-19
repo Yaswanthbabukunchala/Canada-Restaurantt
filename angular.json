@@ -34,7 +34,6 @@
               "outputHashing": "all",
               "sourceMap": false,
               "extractLicenses": true,
-              "inspect": false,
               "vendorChunk": false,
               "buildOptimizer": true
             },
