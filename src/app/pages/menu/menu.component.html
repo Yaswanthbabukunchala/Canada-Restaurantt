@@ -27,7 +27,7 @@
   </div>
   
   <div class="menu-grid">
-    <article class="menu-item-card" *ngFor="let item of brunchClassics">
+    <article class="menu-item-card" *ngFor="let item of brunchClassics" tabindex="0">
       <div class="menu-item-image">
         <img [src]="item.image || 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=200&q=80'" [alt]="item.name" />
       </div>
@@ -37,6 +37,20 @@
           <span class="menu-item-price">{{ item.price }}</span>
         </div>
         <p class="menu-item-description">{{ item.description || '—' }}</p>
+      </div>
+      <div class="menu-item-popover" aria-hidden="true">
+        <div class="menu-item-popover__image">
+          <img
+            [src]="item.image || 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=200&q=80'"
+            [alt]="item.name"
+          />
+        </div>
+        <div class="menu-item-popover__body">
+          <p class="menu-item-popover__eyebrow">Chef's note</p>
+          <h4>{{ item.name }}</h4>
+          <p>{{ item.description || '—' }}</p>
+          <span class="menu-item-popover__price">{{ item.price }}</span>
+        </div>
       </div>
     </article>
   </div>
@@ -62,7 +76,7 @@
     <h3 class="pasta-subtitle">Choice of Pasta: Penne or Fettuccine</h3>
     
     <div class="menu-grid">
-      <article class="menu-item-card" *ngFor="let item of homemadePasta">
+      <article class="menu-item-card" *ngFor="let item of homemadePasta" tabindex="0">
         <div class="menu-item-image">
           <img [src]="item.image || 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=200&q=80'" [alt]="item.name" />
         </div>
@@ -73,6 +87,20 @@
           </div>
           <p class="menu-item-description">{{ item.description || '—' }}</p>
         </div>
+        <div class="menu-item-popover" aria-hidden="true">
+          <div class="menu-item-popover__image">
+            <img
+              [src]="item.image || 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=200&q=80'"
+              [alt]="item.name"
+            />
+          </div>
+          <div class="menu-item-popover__body">
+            <p class="menu-item-popover__eyebrow">Chef's note</p>
+            <h4>{{ item.name }}</h4>
+            <p>{{ item.description || '—' }}</p>
+            <span class="menu-item-popover__price">{{ item.price }}</span>
+          </div>
+        </div>
       </article>
     </div>
   </div>
@@ -81,7 +109,7 @@
     <h3 class="pasta-subtitle">SIGNATURE PASTAS</h3>
     
     <div class="menu-grid">
-      <article class="menu-item-card" *ngFor="let item of signaturePastas">
+      <article class="menu-item-card" *ngFor="let item of signaturePastas" tabindex="0">
         <div class="menu-item-image">
           <img [src]="item.image || 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=200&q=80'" [alt]="item.name" />
         </div>
@@ -91,6 +119,20 @@
             <span class="menu-item-price">{{ item.price }}</span>
           </div>
           <p class="menu-item-description">{{ item.description || '—' }}</p>
+        </div>
+        <div class="menu-item-popover" aria-hidden="true">
+          <div class="menu-item-popover__image">
+            <img
+              [src]="item.image || 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=200&q=80'"
+              [alt]="item.name"
+            />
+          </div>
+          <div class="menu-item-popover__body">
+            <p class="menu-item-popover__eyebrow">Chef's note</p>
+            <h4>{{ item.name }}</h4>
+            <p>{{ item.description || '—' }}</p>
+            <span class="menu-item-popover__price">{{ item.price }}</span>
+          </div>
         </div>
       </article>
     </div>
@@ -113,7 +155,7 @@
     <h3 class="pasta-subtitle">BASE OPTIONS</h3>
     
     <div class="menu-grid">
-      <article class="menu-item-card" *ngFor="let item of baseOptions">
+      <article class="menu-item-card" *ngFor="let item of baseOptions" tabindex="0">
         <div class="menu-item-image">
           <img [src]="item.image || 'https://images.unsplash.com/photo-1464306076886-da185f6a9d12?auto=format&fit=crop&w=200&q=80'" [alt]="item.name" />
         </div>
@@ -124,6 +166,20 @@
           </div>
           <p class="menu-item-description">{{ item.description || '—' }}</p>
         </div>
+        <div class="menu-item-popover" aria-hidden="true">
+          <div class="menu-item-popover__image">
+            <img
+              [src]="item.image || 'https://images.unsplash.com/photo-1464306076886-da185f6a9d12?auto=format&fit=crop&w=200&q=80'"
+              [alt]="item.name"
+            />
+          </div>
+          <div class="menu-item-popover__body">
+            <p class="menu-item-popover__eyebrow">Chef's note</p>
+            <h4>{{ item.name }}</h4>
+            <p>{{ item.description || '—' }}</p>
+            <span class="menu-item-popover__price">{{ item.price }}</span>
+          </div>
+        </div>
       </article>
     </div>
   </div>
@@ -132,7 +188,7 @@
     <h3 class="pasta-subtitle">ADD-ON SWEET STACKS</h3>
     
     <div class="menu-grid">
-      <article class="menu-item-card" *ngFor="let item of sweetCreations; let i = index">
+      <article class="menu-item-card" *ngFor="let item of sweetCreations; let i = index" tabindex="0">
         <div class="menu-item-image">
           <img [src]="item.image || 'https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=200&q=80'" [alt]="item.name" />
         </div>
@@ -142,6 +198,20 @@
             <span class="menu-item-price">{{ item.price }}</span>
           </div>
           <p class="menu-item-description">{{ item.description || '—' }}</p>
+        </div>
+        <div class="menu-item-popover" aria-hidden="true">
+          <div class="menu-item-popover__image">
+            <img
+              [src]="item.image || 'https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=200&q=80'"
+              [alt]="item.name"
+            />
+          </div>
+          <div class="menu-item-popover__body">
+            <p class="menu-item-popover__eyebrow">Chef's note</p>
+            <h4>{{ item.name }}</h4>
+            <p>{{ item.description || '—' }}</p>
+            <span class="menu-item-popover__price">{{ item.price }}</span>
+          </div>
         </div>
       </article>
     </div>
@@ -164,7 +234,7 @@
     <h3 class="pasta-subtitle">BASES</h3>
     
     <div class="menu-grid">
-      <article class="menu-item-card" *ngFor="let item of dessertBases">
+      <article class="menu-item-card" *ngFor="let item of dessertBases" tabindex="0">
         <div class="menu-item-image">
           <img [src]="item.image || 'https://images.unsplash.com/photo-1464306076886-da185f6a9d12?auto=format&fit=crop&w=200&q=80'" [alt]="item.name" />
         </div>
@@ -175,6 +245,20 @@
           </div>
           <p class="menu-item-description">{{ item.description || '—' }}</p>
         </div>
+        <div class="menu-item-popover" aria-hidden="true">
+          <div class="menu-item-popover__image">
+            <img
+              [src]="item.image || 'https://images.unsplash.com/photo-1464306076886-da185f6a9d12?auto=format&fit=crop&w=200&q=80'"
+              [alt]="item.name"
+            />
+          </div>
+          <div class="menu-item-popover__body">
+            <p class="menu-item-popover__eyebrow">Chef's note</p>
+            <h4>{{ item.name }}</h4>
+            <p>{{ item.description || '—' }}</p>
+            <span class="menu-item-popover__price">{{ item.price }}</span>
+          </div>
+        </div>
       </article>
     </div>
   </div>
@@ -183,7 +267,7 @@
     <h3 class="pasta-subtitle">SIGNATURE TOPPING COMBINATIONS</h3>
     
     <div class="menu-grid">
-      <article class="menu-item-card" *ngFor="let item of signatureToppings; let i = index">
+      <article class="menu-item-card" *ngFor="let item of signatureToppings; let i = index" tabindex="0">
         <div class="menu-item-image">
           <img [src]="item.image || 'https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=200&q=80'" [alt]="item.name" />
         </div>
@@ -193,6 +277,20 @@
             <span class="menu-item-price" *ngIf="item.price">{{ item.price }}</span>
           </div>
           <p class="menu-item-description">{{ item.description || '—' }}</p>
+        </div>
+        <div class="menu-item-popover" aria-hidden="true">
+          <div class="menu-item-popover__image">
+            <img
+              [src]="item.image || 'https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=200&q=80'"
+              [alt]="item.name"
+            />
+          </div>
+          <div class="menu-item-popover__body">
+            <p class="menu-item-popover__eyebrow">Chef's note</p>
+            <h4>{{ item.name }}</h4>
+            <p>{{ item.description || '—' }}</p>
+            <span class="menu-item-popover__price" *ngIf="item.price">{{ item.price }}</span>
+          </div>
         </div>
       </article>
     </div>
@@ -213,7 +311,7 @@
     <h3 class="pasta-subtitle">STRAWBERRY CUPS</h3>
     
     <div class="menu-grid">
-      <article class="menu-item-card" *ngFor="let item of strawberryCups; let i = index">
+      <article class="menu-item-card" *ngFor="let item of strawberryCups; let i = index" tabindex="0">
         <div class="menu-item-image">
           <img [src]="item.image || 'https://images.unsplash.com/photo-1430163393927-3dab9af7ea38?auto=format&fit=crop&w=200&q=80'" [alt]="item.name" />
         </div>
@@ -223,6 +321,20 @@
             <span class="menu-item-price">{{ item.price }}</span>
           </div>
           <p class="menu-item-description">{{ item.description || '—' }}</p>
+        </div>
+        <div class="menu-item-popover" aria-hidden="true">
+          <div class="menu-item-popover__image">
+            <img
+              [src]="item.image || 'https://images.unsplash.com/photo-1430163393927-3dab9af7ea38?auto=format&fit=crop&w=200&q=80'"
+              [alt]="item.name"
+            />
+          </div>
+          <div class="menu-item-popover__body">
+            <p class="menu-item-popover__eyebrow">Chef's note</p>
+            <h4>{{ item.name }}</h4>
+            <p>{{ item.description || '—' }}</p>
+            <span class="menu-item-popover__price">{{ item.price }}</span>
+          </div>
         </div>
       </article>
     </div>

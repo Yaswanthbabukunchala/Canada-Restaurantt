@@ -8,17 +8,17 @@ export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    title: 'Canada Restaurant · Home'
+    title: 'FLAVOUR CAFÉ · Home'
   },
   {
     path: 'menu',
     component: MenuComponent,
-    title: 'Canada Restaurant · Menu'
+    title: 'FLAVOUR CAFÉ · Menu'
   },
   {
     path: 'feedback',
     component: FeedbackComponent,
-    title: 'Canada Restaurant · Feedback'
+    title: 'FLAVOUR CAFÉ · Feedback'
   },
   {
     path: '**',
