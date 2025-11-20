@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "npx ng build --configuration production",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
-  },
+  "ng": "ng",
+  "start": "ng serve",
+  "build": "ng build --configuration production",
+  "watch": "ng build --watch --configuration development",
+  "test": "ng test"
+},
   "dependencies": {
     "@angular/animations": "^17.3.8",
     "@angular/common": "^17.3.8",
