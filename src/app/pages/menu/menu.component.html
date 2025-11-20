@@ -1,241 +1,230 @@
-<section class="menu-hero">
-  <div>
-    <p class="eyebrow">Menus</p>
-    <h2>Crafted for every craving</h2>
-    <p>
-      Explore bold flavors from dawn to dusk with chef-led tasting boards, lavish bowls, and theatrical evening plates.
-    </p>
-  </div>
-  <div class="menu-highlights">
-    <div class="highlight-pill">
-      <span>50+</span>
-      <small>seasonal dishes</small>
-    </div>
-    <div class="highlight-pill">
-      <span>3</span>
-      <small>curated services</small>
-    </div>
-    <div class="highlight-pill">
-      <span>Farm → Table</span>
-      <small>traceable sourcing</small>
+<!-- Hero Section with Large Food Image -->
+<section class="menu-hero-image">
+  <div class="hero-image-container">
+    <div class="hero-background-image"></div>
+    <div class="hero-overlay">
+      <p class="hero-eyebrow">DELICIOUS & AMAZING</p>
+      <div class="decorative-line">
+        <span class="circle"></span>
+        <span class="circle"></span>
+        <span class="circle"></span>
+      </div>
+      <h1 class="hero-title">Our Menu</h1>
     </div>
   </div>
 </section>
 
-<section class="menu-section">
-  <header>
-    <div>
-      <p class="eyebrow">Section 1 — All-Day Brunch &amp; Hearty Classics</p>
-      <h3>All-Day Brunch &amp; Hearty Classics</h3>
+<!-- All-Day Brunch & Early Classics Section -->
+<section class="menu-category-section">
+  <div class="section-header">
+    <p class="section-label">ALL–DAY BRUNCH & EARLY CLASSICS</p>
+    <div class="decorative-line">
+      <span class="circle"></span>
+      <span class="circle"></span>
+      <span class="circle"></span>
     </div>
-    <span class="menu-badge">Served Open to Close</span>
-  </header>
-  <p class="section-description">
-    Café staples cooked to order with comforting sides, vibrant produce, and modern brunch flair.
-  </p>
-
-  <div class="section-media" *ngIf="sectionImagery['brunch'] as gallery">
-    <img *ngFor="let media of gallery" [src]="media.src" [alt]="media.alt" loading="lazy" />
+    <h2 class="section-title">All-Day Brunch & Early Classics</h2>
   </div>
-
-  <div class="menu-list" aria-label="All-day brunch and hearty classics">
-    <article class="menu-item" *ngFor="let item of brunchClassics">
-      <header>
-        <h4>{{ item.name }}</h4>
-        <span class="price">{{ item.price }}</span>
-      </header>
-      <p>{{ item.description || '—' }}</p>
+  
+  <div class="menu-grid">
+    <article class="menu-item-card" *ngFor="let item of brunchClassics">
+      <div class="menu-item-image">
+        <img [src]="item.image || 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=200&q=80'" [alt]="item.name" />
+      </div>
+      <div class="menu-item-info">
+        <div class="menu-item-header">
+          <h3 class="menu-item-name">{{ item.name }}</h3>
+          <span class="menu-item-price">{{ item.price }}</span>
+        </div>
+        <p class="menu-item-description">{{ item.description || '—' }}</p>
+      </div>
     </article>
   </div>
 </section>
 
-<section class="menu-section">
-  <header>
-    <div>
-      <p class="eyebrow">Section 2 — Our Homemade Pasta</p>
-      <h3>Our Homemade Pasta</h3>
+<!-- Our Homemade Pasta Section -->
+<section class="menu-category-section">
+  <div class="section-header">
+    <p class="section-label">OUR HOMEMADE PASTA</p>
+    <div class="decorative-line">
+      <span class="circle"></span>
+      <span class="circle"></span>
+      <span class="circle"></span>
     </div>
-    <span class="menu-badge">Made to Order</span>
-  </header>
-  <p class="section-description">Choice of pasta: penne or fettuccine, finished with toppings inspired by our test kitchen.</p>
-
-  <div class="section-media" *ngIf="sectionImagery['pasta'] as gallery">
-    <img *ngFor="let media of gallery" [src]="media.src" [alt]="media.alt" loading="lazy" />
+    <h2 class="section-title">Our Homemade Pasta</h2>
   </div>
-
-  <div class="menu-block">
-    <h4 class="menu-subtitle">Our Homemade Pasta – Choice of Pasta / Penne or Fettuccine</h4>
-    <div class="menu-list" aria-label="Homemade pasta menu">
-      <article class="menu-item" *ngFor="let item of homemadePasta">
-        <header>
-          <h4>{{ item.name }}</h4>
-          <span class="price">{{ item.price }}</span>
-        </header>
-        <p>{{ item.description || '—' }}</p>
+  
+  <p class="section-intro">
+    From our kitchen to your table. All of our sauces are made fresh in-house daily using high-quality ingredients.
+  </p>
+  
+  <div class="pasta-subsection">
+    <h3 class="pasta-subtitle">Choice of Pasta: Penne or Fettuccine</h3>
+    
+    <div class="menu-grid">
+      <article class="menu-item-card" *ngFor="let item of homemadePasta">
+        <div class="menu-item-image">
+          <img [src]="item.image || 'https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=200&q=80'" [alt]="item.name" />
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">{{ item.name }}</h3>
+            <span class="menu-item-price">{{ item.price }}</span>
+          </div>
+          <p class="menu-item-description">{{ item.description || '—' }}</p>
+        </div>
       </article>
     </div>
   </div>
-
-  <div class="menu-block">
-    <h4 class="menu-subtitle">Signature Pastas</h4>
-    <div class="menu-list" aria-label="Signature pastas">
-      <article class="menu-item" *ngFor="let item of signaturePastas">
-        <header>
-          <h4>{{ item.name }}</h4>
-          <span class="price">{{ item.price }}</span>
-        </header>
-        <p>{{ item.description || '—' }}</p>
+  
+  <div class="pasta-subsection">
+    <h3 class="pasta-subtitle">SIGNATURE PASTAS</h3>
+    
+    <div class="menu-grid">
+      <article class="menu-item-card" *ngFor="let item of signaturePastas">
+        <div class="menu-item-image">
+          <img [src]="item.image || 'https://images.unsplash.com/photo-1525755662778-989d0524087e?auto=format&fit=crop&w=200&q=80'" [alt]="item.name" />
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">{{ item.name }}</h3>
+            <span class="menu-item-price">{{ item.price }}</span>
+          </div>
+          <p class="menu-item-description">{{ item.description || '—' }}</p>
+        </div>
       </article>
     </div>
   </div>
 </section>
 
-<section class="menu-section">
-  <header>
-    <div>
-      <p class="eyebrow">Section 3 — Add-ons</p>
-      <h3>Add-ons</h3>
+<!-- All-Day Sweet Creation Section -->
+<section class="menu-category-section">
+  <div class="section-header">
+    <p class="section-label">ALL–DAY SWEET CREATION</p>
+    <div class="decorative-line">
+      <span class="circle"></span>
+      <span class="circle"></span>
+      <span class="circle"></span>
     </div>
-    <span class="menu-badge">Finishers &amp; Extras</span>
-  </header>
-  <p class="section-description">Customize every plate with brunch-ready extras, premium dairy, and savoury toppers.</p>
-
-  <div class="section-media section-media--single" *ngIf="sectionImagery['addOns'] as gallery">
-    <img *ngFor="let media of gallery" [src]="media.src" [alt]="media.alt" loading="lazy" />
+    <h2 class="section-title">All-Day Sweet Creation</h2>
   </div>
-
-  <div class="menu-addons" aria-label="Add-ons">
-    <article *ngFor="let item of addOns">
-      <span class="addon-name">{{ item.name }}</span>
-      <span class="addon-price">{{ item.price }}</span>
-    </article>
-  </div>
-</section>
-
-<section class="menu-section">
-  <header>
-    <div>
-      <p class="eyebrow">Section 4 — All-Day Sweet Creation</p>
-      <h3>All-Day Sweet Creation</h3>
+  
+  <div class="pasta-subsection">
+    <h3 class="pasta-subtitle">BASE OPTIONS</h3>
+    
+    <div class="menu-grid">
+      <article class="menu-item-card" *ngFor="let item of baseOptions">
+        <div class="menu-item-image">
+          <img [src]="item.image || 'https://images.unsplash.com/photo-1464306076886-da185f6a9d12?auto=format&fit=crop&w=200&q=80'" [alt]="item.name" />
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">{{ item.name }}</h3>
+            <span class="menu-item-price">{{ item.price }}</span>
+          </div>
+          <p class="menu-item-description">{{ item.description || '—' }}</p>
+        </div>
+      </article>
     </div>
-    <span class="menu-badge">Sweet Plates</span>
-  </header>
-  <p class="section-description">
-    Stacks, waffles, and soufflé pancakes topped with seasonal fruit, creamy drizzles, and patisserie-inspired finishes.
-  </p>
-
-  <div class="section-media" *ngIf="sectionImagery['sweet'] as gallery">
-    <img *ngFor="let media of gallery" [src]="media.src" [alt]="media.alt" loading="lazy" />
   </div>
-
-  <div class="menu-list" aria-label="All-day sweet creation">
-    <article class="menu-item" *ngFor="let item of sweetCreations">
-      <header>
-        <h4>{{ item.name }}</h4>
-        <span class="price">{{ item.price }}</span>
-      </header>
-      <p>{{ item.description || '—' }}</p>
-    </article>
-  </div>
-</section>
-
-<section class="menu-section">
-  <header>
-    <div>
-      <p class="eyebrow">Section 5 — Strawberry Cups</p>
-      <h3>Strawberry Cups</h3>
+  
+  <div class="pasta-subsection">
+    <h3 class="pasta-subtitle">ADD-ON SWEET STACKS</h3>
+    
+    <div class="menu-grid">
+      <article class="menu-item-card" *ngFor="let item of sweetCreations; let i = index">
+        <div class="menu-item-image">
+          <img [src]="item.image || 'https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=200&q=80'" [alt]="item.name" />
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">{{ i + 1 }}. {{ item.name }}</h3>
+            <span class="menu-item-price">{{ item.price }}</span>
+          </div>
+          <p class="menu-item-description">{{ item.description || '—' }}</p>
+        </div>
+      </article>
     </div>
-    <span class="menu-badge">Layered Treats</span>
-  </header>
-  <p class="section-description">Hand-layered parfaits brimming with berries, creams, chocolate drizzles, and nostalgic toppings.</p>
-
-  <div class="section-media section-media--single" *ngIf="sectionImagery['cups'] as gallery">
-    <img *ngFor="let media of gallery" [src]="media.src" [alt]="media.alt" loading="lazy" />
-  </div>
-
-  <div class="menu-list" aria-label="Strawberry cups">
-    <article class="menu-item" *ngFor="let item of strawberryCups">
-      <header>
-        <h4>{{ item.name }}</h4>
-        <span class="price">{{ item.price }}</span>
-      </header>
-      <p>{{ item.description || '—' }}</p>
-    </article>
   </div>
 </section>
 
-<section class="menu-section">
-  <header>
-    <div>
-      <p class="eyebrow">Section 6 — Extra Toppings</p>
-      <h3>Extra Toppings</h3>
+<!-- Dessert Menu Section -->
+<section class="menu-category-section">
+  <div class="section-header">
+    <p class="section-label">DESSERT MENU</p>
+    <div class="decorative-line">
+      <span class="circle"></span>
+      <span class="circle"></span>
+      <span class="circle"></span>
     </div>
-    <span class="menu-badge">Finishers</span>
-  </header>
-  <p class="section-description">Mix and match sauces, crunch, fruit, and premium creams to build your dream dessert.</p>
-
-  <div class="section-media section-media--single" *ngIf="sectionImagery['toppings'] as gallery">
-    <img *ngFor="let media of gallery" [src]="media.src" [alt]="media.alt" loading="lazy" />
+    <h2 class="section-title">Dessert Menu</h2>
   </div>
-
-  <div class="menu-addons" aria-label="Extra toppings">
-    <article *ngFor="let item of extraToppings">
-      <span class="addon-name">{{ item.name }}</span>
-      <span class="addon-price">{{ item.price }}</span>
-    </article>
-  </div>
-</section>
-
-<section class="menu-section">
-  <header>
-    <div>
-      <p class="eyebrow">Section 7 — Dessert Menu</p>
-      <h3>Dessert Menu</h3>
+  
+  <div class="pasta-subsection">
+    <h3 class="pasta-subtitle">BASES</h3>
+    
+    <div class="menu-grid">
+      <article class="menu-item-card" *ngFor="let item of dessertBases">
+        <div class="menu-item-image">
+          <img [src]="item.image || 'https://images.unsplash.com/photo-1464306076886-da185f6a9d12?auto=format&fit=crop&w=200&q=80'" [alt]="item.name" />
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">{{ item.name }}</h3>
+            <span class="menu-item-price">{{ item.price }}</span>
+          </div>
+          <p class="menu-item-description">{{ item.description || '—' }}</p>
+        </div>
+      </article>
     </div>
-    <span class="menu-badge">Cheesecake Bar</span>
-  </header>
-  <p class="section-description">
-    Modern classics starring soufflé pancakes, Belgian waffles, and cheesecake bites dipped, drizzled, and dusted to order.
-  </p>
-
-  <div class="section-media" *ngIf="sectionImagery['dessert'] as gallery">
-    <img *ngFor="let media of gallery" [src]="media.src" [alt]="media.alt" loading="lazy" />
   </div>
-
-  <div class="menu-list" aria-label="Dessert menu">
-    <article class="menu-item" *ngFor="let item of dessertMenu">
-      <header>
-        <h4>{{ item.name }}</h4>
-        <span class="price">{{ item.price }}</span>
-      </header>
-      <p>{{ item.description || '—' }}</p>
-    </article>
+  
+  <div class="pasta-subsection">
+    <h3 class="pasta-subtitle">SIGNATURE TOPPING COMBINATIONS</h3>
+    
+    <div class="menu-grid">
+      <article class="menu-item-card" *ngFor="let item of signatureToppings; let i = index">
+        <div class="menu-item-image">
+          <img [src]="item.image || 'https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=200&q=80'" [alt]="item.name" />
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">{{ i + 1 }}. {{ item.name }}</h3>
+            <span class="menu-item-price" *ngIf="item.price">{{ item.price }}</span>
+          </div>
+          <p class="menu-item-description">{{ item.description || '—' }}</p>
+        </div>
+      </article>
+    </div>
+  </div>
+  
+  <div class="pasta-subsection">
+    <h3 class="pasta-subtitle">EXTRA TOPPINGS</h3>
+    
+    <div class="menu-addons" aria-label="Extra toppings">
+      <article class="addon-item" *ngFor="let item of extraToppings">
+        <span class="addon-name">{{ item.name }}</span>
+        <span class="addon-price">{{ item.price }}</span>
+      </article>
+    </div>
+  </div>
+  
+  <div class="pasta-subsection">
+    <h3 class="pasta-subtitle">STRAWBERRY CUPS</h3>
+    
+    <div class="menu-grid">
+      <article class="menu-item-card" *ngFor="let item of strawberryCups; let i = index">
+        <div class="menu-item-image">
+          <img [src]="item.image || 'https://images.unsplash.com/photo-1430163393927-3dab9af7ea38?auto=format&fit=crop&w=200&q=80'" [alt]="item.name" />
+        </div>
+        <div class="menu-item-info">
+          <div class="menu-item-header">
+            <h3 class="menu-item-name">{{ i + 1 }}. {{ item.name }}</h3>
+            <span class="menu-item-price">{{ item.price }}</span>
+          </div>
+          <p class="menu-item-description">{{ item.description || '—' }}</p>
+        </div>
+      </article>
+    </div>
   </div>
 </section>
-
-<section class="chef-specials">
-  <div class="special-content">
-    <p class="eyebrow">Chef’s Special</p>
-    <h2>Limited-release tasting</h2>
-    <p>
-      A 7-course story of coast-to-coast flavors featuring smoked Atlantic salmon, foraged mushrooms, maple-glazed duck,
-      and tableside desserts.
-    </p>
-    <button class="pill-btn" type="button" (click)="reservationState.open()">Book Chef’s Table</button>
-  </div>
-  <div class="special-gallery">
-    <img
-      src="https://images.unsplash.com/photo-1481391032119-d89fee407e44?auto=format&fit=crop&w=600&q=80"
-      alt="Chef plating dish"
-    />
-    <img
-      src="https://images.unsplash.com/photo-1484980972926-edee96e0960d?auto=format&fit=crop&w=600&q=80"
-      alt="Fine dining dish"
-    />
-    <img
-      src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=600&q=80"
-      alt="Dessert creation"
-    />
-  </div>
-</section>
-
